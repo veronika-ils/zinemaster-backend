@@ -1,0 +1,202 @@
+package com.zinemasterapp.zinemasterapp.model;
+
+
+import jakarta.persistence.*;
+
+import java.time.LocalDate;
+
+@Entity//deka se mapira vo tabela vo baza
+@Table(name = "users")//tabelata kako se vika vo bazata
+public class User {
+
+    @Id//primary key
+    private String id;
+
+    private String name;
+    private String surname;
+
+    @Column(name = "start_date")
+    private LocalDate startDate;
+
+
+    @Column(name = "user_type")
+    private String userType;
+
+    private String address;
+
+    @Column(nullable = false,name = "access")
+    private int access;
+
+    @Column(nullable = false,unique = true)
+    private String username;
+
+    @Column(name = "password_enc",nullable = false)
+    private String password;
+
+    @Column(name = "profile_pic")
+    private String profilePic;
+
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    private String googleSub;
+    private Boolean emailVerified;
+    private String authProvider;
+
+    @Column(name = "unread_notification_count", nullable = false)
+    private int unreadNotificationCount = 0;
+    @Column(name = "pending_email_count", nullable = false)
+    private int pendingEmailCount = 0;
+
+    @Column(name = "requests_processed",nullable = false)
+    private int requestsProcessed = 0;
+
+
+    @Column(name = "unseen_processed_status", nullable = false)
+    private int unseenProcessedStatus;
+
+    public int getUnseenProcessedStatus() {
+        return unseenProcessedStatus;
+    }
+
+    public void setUnseenProcessedStatus(int unseenProcessedStatus) {
+        this.unseenProcessedStatus = unseenProcessedStatus;
+    }
+
+    public int getRequestsProcessed() {
+        return requestsProcessed;
+    }
+
+    public void setRequestsProcessed(int requestsProcessed) {
+        this.requestsProcessed = requestsProcessed;
+    }
+
+    public int getPendingEmailCount() {
+        return pendingEmailCount;
+    }
+
+    public void setPendingEmailCount(int pendingEmailCount) {
+        this.pendingEmailCount = pendingEmailCount;
+    }
+
+    public int getUnreadNotificationCount() {
+        return unreadNotificationCount;
+    }
+
+    public void setUnreadNotificationCount(int unreadNotificationCount) {
+        this.unreadNotificationCount = unreadNotificationCount;
+    }
+
+    public String getGoogleSub() {
+        return googleSub;
+    }
+
+    public void setGoogleSub(String googleSub) {
+        this.googleSub = googleSub;
+    }
+
+    public Boolean getEmailVerified() {
+        return emailVerified;
+    }
+
+    public void setEmailVerified(Boolean emailVerified) {
+        this.emailVerified = emailVerified;
+    }
+
+    public String getAuthProvider() {
+        return authProvider;
+    }
+
+    public void setAuthProvider(String authProvider) {
+        this.authProvider = authProvider;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePicture) {
+        this.profilePic = profilePicture;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getAccess() {//changed the name so its more convenient
+        return access;
+    }
+
+    public void setAccess(int access) {//no change here
+        this.access = access;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}
