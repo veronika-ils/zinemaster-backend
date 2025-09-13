@@ -25,12 +25,5 @@ It is built with **Spring Boot** and provides the API, authentication, WebSocket
 - **Messaging**: Spring WebSocket + STOMP  
 - **Build Tool**: Maven  
 
----
 
-## Project Setup
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/veronika-ils/zinemaster-backend.git
-cd zinemaster-backend
 
